@@ -1,0 +1,256 @@
+{
+    "names": [
+        {
+            "gender": "Female",
+            "name": "Emma"
+        },
+        {
+            "gender": "Female",
+            "name": "Olivia"
+        },
+        {
+            "gender": "Female",
+            "name": "Ava"
+        },
+        {
+            "gender": "Female",
+            "name": "Isabella"
+        },
+        {
+            "gender": "Female",
+            "name": "Sophia"
+        },
+        {
+            "gender": "Female",
+            "name": "Mia"
+        },
+        {
+            "gender": "Female",
+            "name": "Charlotte"
+        },
+        {
+            "gender": "Female",
+            "name": "Amelia"
+        },
+        {
+            "gender": "Female",
+            "name": "Evelyn"
+        },
+        {
+            "gender": "Female",
+            "name": "Abigail"
+        },
+        {
+            "gender": "Female",
+            "name": "Aanya"
+        },
+        {
+            "gender": "Female",
+            "name": "Nurvada"
+        },
+        {
+            "gender": "Female",
+            "name": "Diya"
+        },
+        {
+            "gender": "Female",
+            "name": "Hiya"
+        },
+        {
+            "gender": "Female",
+            "name": "Jhanvi"
+        },
+        {
+            "gender": "Female",
+            "name": "Kavyta"
+        },
+        {
+            "gender": "Female",
+            "name": "Siya"
+        },
+        {
+            "gender": "Female",
+            "name": "Davina"
+        },
+        {
+            "gender": "Female",
+            "name": "Pavati"
+        },
+        {
+            "gender": "Female",
+            "name": "Zara"
+        },
+        {
+            "gender": "Male",
+            "name": "Liam"
+        },
+        {
+            "gender": "Male",
+            "name": "James"
+        },
+        {
+            "gender": "Male",
+            "name": "Logan"
+        },
+        {
+            "gender": "Male",
+            "name": "Benjamin"
+        },
+        {
+            "gender": "Male",
+            "name": "Oliver"
+        },
+        {
+            "gender": "Male",
+            "name": "William"
+        },
+        {
+            "gender": "Male",
+            "name": "Lucas"
+        },
+        {
+            "gender": "Male",
+            "name": "Henry"
+        },
+        {
+            "gender": "Male",
+            "name": "Matthew"
+        },
+        {
+            "gender": "Male",
+            "name": "David"
+        },
+        {
+            "gender": "Male",
+            "name": "Mohammed"
+        },
+        {
+            "gender": "Male",
+            "name": "Vihaan"
+        },
+        {
+            "gender": "Male",
+            "name": "Aditya"
+        },
+        {
+            "gender": "Male",
+            "name": "Arjun"
+        },
+        {
+            "gender": "Male",
+            "name": "Krishna"
+        },
+        {
+            "gender": "Male",
+            "name": "Kabir"
+        },
+        {
+            "gender": "Male",
+            "name": "Ramesh"
+        },
+        {
+            "gender": "Male",
+            "name": "Vihaan"
+        },
+        {
+            "gender": "Male",
+            "name": "Zuber"
+        },
+        {
+            "gender": "Male",
+            "name": "Ranbir"
+        }
+    ],
+    "foods": [
+        {
+            "food": "chocolate pieces",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "strawberries",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "grapes",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "apple slices",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "orange slices",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "chips",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "peanuts",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "dried fruits",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "nachos",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "crisps",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "cheese bits",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "nuts",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "raisins",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "sliced pears",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "berriers",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "carrot sticks",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "coconut pieces",
+            "price_min": 10,
+            "price_max": 150
+        },
+        {
+            "food": "cheese slices",
+            "price_min": 10,
+            "price_max": 150
+        }
+    ]
+}

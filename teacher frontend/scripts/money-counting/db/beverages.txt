@@ -1,0 +1,18 @@
+Cola
+Chocolate Milkshake
+Vanilla Milkshake
+Strawberry Milkshake
+Fruit juice
+Lemonade
+Sparkling water
+Apple Cider
+Tea
+Coffee
+Green Tea
+Iced Tea
+Hot chocolate
+Coconut milk
+Orange juice
+Spring Water
+Smoothie
+
