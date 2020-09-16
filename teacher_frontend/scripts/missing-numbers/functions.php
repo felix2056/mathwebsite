@@ -65,14 +65,10 @@ function miss($miss, $q_arr)
 
 function insert($data, $info)
 {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-
-    $dbname = "mydb";
+    require '../../database.php';
 
     // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $conn = mysqli_connect($config['DB_HOST'], $config['DB_USERNAME'], $config['DB_PASSWORD'], $config['DB_DATABASE']);
 
     // Check connection
     if (!$conn) {

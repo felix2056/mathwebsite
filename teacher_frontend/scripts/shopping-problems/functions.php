@@ -169,17 +169,6 @@ function generate($L)
     );
 }
 
-
-
-
-
-
-
-
-
-
-
-
 function check($ans, $cans)
 {
     if (round($ans, 2) == round($cans, 2)) {

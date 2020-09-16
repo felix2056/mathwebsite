@@ -1,14 +1,11 @@
 <?php
+
 function getExercises()
 {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-
-    $dbname = "mydb";
+    require '../database.php';
 
     // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $conn = mysqli_connect($config['DB_HOST'], $config['DB_USERNAME'], $config['DB_PASSWORD'], $config['DB_DATABASE']);
 
     // Check connection
     if (!$conn) {
@@ -31,53 +28,12 @@ function getExercises()
     return $response;
 }
 
-// function getExercise($exercise_id)
-// {
-//     $servername = "localhost";
-//     $username = "root";
-//     $password = "";
-
-//     $dbname = "mydb";
-
-//     // Create connection
-//     $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-//     // Check connection
-//     if (!$conn) {
-//         die("Connection failed: " . mysqli_connect_error());
-//     }
-
-//     /* Start maths_quiz transaction */
-//     $sql = "SELECT * FROM maths_quiz_excercise_sets WHERE id_Maths_Excercise_Sets = '$exercise_id' 
-//     SELECT * FROM maths_quiz WHERE id_Maths_Quiz = '$exercise_id' 
-//     SELECT * FROM maths_quiz_topics WHERE id_Maths_Quiz_Topics_FK = '$exercise_id' 
-//     LIMIT 1";
-    
-//     $query = mysqli_query($conn, $sql);
-//     $response = mysqli_fetch_object($query);
-//     echo json_decode($response);
-//     return;
-    
-//     if (!$response) {
-//         return false;
-//     }
-
-//     $response = mysqli_free_result($response);
-//     mysqli_close($conn);
-
-//     return $response;
-// }
-
 function getQuestions($exercise_id)
 {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-
-    $dbname = "mydb";
+    require '../database.php';
 
     // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $conn = mysqli_connect($config['DB_HOST'], $config['DB_USERNAME'], $config['DB_PASSWORD'], $config['DB_DATABASE']);
 
     // Check connection
     if (!$conn) {
@@ -99,14 +55,10 @@ function getQuestions($exercise_id)
 
 function getSingle($question_id)
 {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-
-    $dbname = "mydb";
+    require '../database.php';
 
     // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $conn = mysqli_connect($config['DB_HOST'], $config['DB_USERNAME'], $config['DB_PASSWORD'], $config['DB_DATABASE']);
 
     // Check connection
     if (!$conn) {
@@ -165,14 +117,10 @@ function getSingle($question_id)
 
 function submitAnswer($answer, $question_id, $question_topic)
 {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-
-    $dbname = "mydb";
+    require '../database.php';
 
     // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $conn = mysqli_connect($config['DB_HOST'], $config['DB_USERNAME'], $config['DB_PASSWORD'], $config['DB_DATABASE']);
 
     // Check connection
     if (!$conn) {
