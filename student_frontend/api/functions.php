@@ -170,7 +170,7 @@ function submitAnswer($answer, $question_id, $question_topic)
 
     if (count(mysqli_fetch_assoc($checkAnsweredQuery)) > 0) {
         /* Update student answer to database */
-        $sql = "UPDATE maths_quiz_pupils_answers SET Pupils_Answer = '$answer', Is_Correct = '$isCorrect'";
+        $sql = "UPDATE maths_quiz_pupils_answers SET Pupils_Answer = '$answer', Is_Correct = '$isCorrect' WHERE id_Maths_Quiz_Question_FK = '$question_id'";
 
         if (!mysqli_query($conn, $sql)) {
             return false;
