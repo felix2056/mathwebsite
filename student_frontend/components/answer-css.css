@@ -318,6 +318,28 @@
 }
 
 /* --------------------------------------------------
+ :: TIME CONVERSION
+ -------------------------------------------------- */
+.time-conversion li {
+  list-style: none;
+  margin: 0 2rem 1rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.04);
+}
+.time-conversion .input-group-wrapper {
+  display: flex;
+  align-items: center;
+}
+.time-conversion .input-group-wrapper input {
+  text-align: right;
+  width: 4.5rem;
+}
+.time-conversion li .input-group-append .input-group-text {
+  width: 4rem;
+}
+
+/* --------------------------------------------------
   :: MONEY CONVERSIONS
 -------------------------------------------------- */
 .money-conversion ul li {
@@ -394,6 +416,58 @@
 }
 .place-value ul li span {
   font-size: 1.5rem;
+}
+
+/* --------------------------------------------------
+ :: SHOPPING PROBLEMS
+ -------------------------------------------------- */
+.shopping-problems li {
+  margin: 0 2rem 1rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 0.5rem;
+  width: 100%;
+  list-style: none;
+}
+
+table.shopping-menu td {
+  width: 50%;
+}
+
+table.shopping-menu td span:nth-child(2) {
+  float: right;
+}
+
+.shopping-problems li ul li {
+  padding: 0;
+  background: none;
+  list-style-type: lower-roman;
+}
+
+.shopping-problems li ul li input {
+  display: inline;
+  width: 5rem;
+}
+
+.badge {
+  background-color: #607D8B;
+  font-size: 90%;
+}
+
+table.shopping-receipt {
+  margin: 1rem auto;
+  width: 80%;
+  background: #fff;
+}
+
+table.shopping-receipt th:nth-child(3),
+table.shopping-receipt td:nth-child(3) {
+  text-align: right;
+}
+
+table.shopping-receipt tr:last-child td:nth-child(2) {
+  text-align: right;
+  font-weight: bold;
 }
 
 .place-value-as-words .N2W {

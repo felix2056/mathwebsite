@@ -60,7 +60,7 @@ export default {
   data: () => ({
     questions: [],
     question: [],
-    solutionQuestion: "",
+    questionToUse: "",
 
     answer: "",
     solution: "",
@@ -199,6 +199,9 @@ export default {
         } else if (response.data.Question_Topic == "time") {
           this.shouldShow = false;
           this.question = this.populateTQuestions(response.data);
+        } else if (response.data.Question_Topic == "time-conversion") {
+          this.shouldShow = false;
+          this.question = this.populateTCQuestions(response.data);
         } else if (response.data.Question_Topic == "missing-numbers") {
           this.shouldShow = false;
           this.question = this.populateMNQuestions(response.data);
@@ -207,11 +210,14 @@ export default {
           this.question = this.populateONQuestions(response.data);
         } else if (response.data.Question_Topic == "long-division") {
           this.shouldShow = false;
-          this.solutionQuestion = response.data.Question;
+          this.questionToUse = response.data.Question;
           this.question = this.populateLDQuestions(response.data);
         } else if (response.data.Question_Topic == "place-value-as-words") {
           this.shouldShow = false;
           this.question = this.populatePVAWQuestions(response.data);
+        } else if (response.data.Question_Topic == "shopping-problems") {
+          this.shouldShow = false;
+          this.question = this.populateSPQuestions(response.data);
         } else if (response.data.Question_Topic == "place-value") {
           this.shouldShow = false;
           this.question = this.populatePVQuestions(response.data);
@@ -394,7 +400,7 @@ export default {
         }
       }
 
-      html = html + `</li><div id='status_1'></div></ul></li>`;    
+      html = html + `</li><div id='status_1'></div></ul></li>`;
 
       result.Question = html;
       return result;
@@ -460,6 +466,72 @@ export default {
       }
 
       html = html.replace("<sol>", `sol_1`);
+
+      result.Question = html;
+      return result;
+    },
+
+    populateTCQuestions(result, mixed = false) {
+      var html, question, answer;
+
+      html = "";
+
+      question = result.Question;
+      answer = result.Answer;
+
+      html = html + `<li>`;
+      console.log(question);
+      html = html + question;
+
+      var qq = "";
+
+      this.questionToUse = answer.split(" ")[1];
+
+      if (result.Pupils_Answer == "") {
+        qq +=
+          `<div class="input-group ml-2">
+              <input type="text" class="form-control q_${this.$route.params.question}"  id="q_${this.$route.params.question}">
+            <div class="input-group-append"><div class="input-group-text">` +
+          answer.split(" ")[1] +
+          `</div>
+            </div></div>`;
+      } else {
+        qq +=
+          `<div class="input-group ml-2">
+              <input type="text" class="form-control q_${
+                this.$route.params.question
+              }"  id="q_${this.$route.params.question}" value="${Number(
+            result.Pupils_Answer.split(" ")[0]
+          )}"">
+            <div class="input-group-append"><div class="input-group-text">` +
+          answer.split(" ")[1] +
+          `</div>
+            </div></div>`;
+      }
+
+      qq += `</div>`;
+
+      html = html.replace("<q1>", qq);
+      var i = 1;
+
+      html = html.replace(
+        "<op-ch>",
+        ` <input type="text" class="form-control ml-2"  id="q_${i}" ans='${answer[0]}'>
+          <div class="form-group ml-2">
+             <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" name="ampm_${i}" value="AM" id="am_${i}">
+                <label class="custom-control-label" for="am_${i}">AM</label>
+             </div>
+             <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" name="ampm_${i}" value="PM" id="pm_${i}">
+                <label class="custom-control-label" for="pm_${i}">PM</label>
+             </div>
+          </div>
+          </div>
+          `
+      );
+
+      html = html.replace("<ID>", `ans_${i}`);
 
       result.Question = html;
       return result;
@@ -647,31 +719,31 @@ export default {
       html = html + question;
 
       if (typeof result.Pupils_Answer == "string") {
-      html = html.replace(
-        "<q1>",
-        `<input type="number" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}1" ans='${answer[0]}' >
+        html = html.replace(
+          "<q1>",
+          `<input type="number" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}1" ans='${answer[0]}' >
             `
-      );
-      html = html.replace(
-        "<q2>",
-        `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}2" ans='${answer[0]}' >
+        );
+        html = html.replace(
+          "<q2>",
+          `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}2" ans='${answer[0]}' >
              `
-      );
-      html = html.replace(
-        "<q3>",
-        `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}3" ans='${answer[1]}''>
+        );
+        html = html.replace(
+          "<q3>",
+          `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}3" ans='${answer[1]}''>
            `
-      );
-      html = html.replace(
-        "<q4>",
-        `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}4" ans='${answer[2]}''>
+        );
+        html = html.replace(
+          "<q4>",
+          `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}4" ans='${answer[2]}''>
             `
-      );
-      html = html.replace(
-        "<q5>",
-        `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}5" ans='${answer[3]}''>
+        );
+        html = html.replace(
+          "<q5>",
+          `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}5" ans='${answer[3]}''>
          </li>`
-      );
+        );
       } else {
         html = html.replace(
           "<q1>",
@@ -697,6 +769,65 @@ export default {
           "<q5>",
           `<input type="text" class="q5 form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}5" value="${result.Pupils_Answer[3]}"'>
            </li>`
+        );
+      }
+
+      result.Question = html;
+      return result;
+    },
+
+    populateSPQuestions(result, mixed = false) {
+      var html = "";
+
+      var question = result.Question;
+      var answer = result.Answer;
+
+      html = html + `<li>`;
+      html = html + question;
+
+      if (typeof result.Pupils_Answer == "string") {
+        html = html.replace(
+          "<q1>",
+          `<input type="number" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}1"'>`
+        );
+        html = html.replace(
+          "<q2>",
+          `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}2"'>`
+        );
+        html = html.replace(
+          "<q3>",
+          `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}3"'>`
+        );
+        html = html.replace(
+          "<q4>",
+          `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}4"'>`
+        );
+        html = html.replace(
+          "<q5>",
+          `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}5"'>
+          </li>`
+        );
+      } else {
+        html = html.replace(
+          "<q1>",
+          `<input type="number" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}1" value="${result.Pupils_Answer[0]}"'>`
+        );
+        html = html.replace(
+          "<q2>",
+          `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}2" value="${result.Pupils_Answer[1]}"'>`
+        );
+        html = html.replace(
+          "<q3>",
+          `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}3" value="${result.Pupils_Answer[2]}"'>`
+        );
+        html = html.replace(
+          "<q4>",
+          `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}4" value="${result.Pupils_Answer[3]}"'>`
+        );
+        html = html.replace(
+          "<q5>",
+          `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}5" value="${result.Pupils_Answer[4]}"'>
+          </li>`
         );
       }
 
@@ -738,7 +869,10 @@ export default {
 
         //console.log(ans);
         //return Number(ans);
-      } else if (question_topic == "rounding") {
+      } else if (
+        question_topic == "rounding" ||
+        question_topic == "time-conversion"
+      ) {
         let ans = $(".q_" + self.$route.params.question).val();
 
         if (ans == "") {
@@ -754,15 +888,22 @@ export default {
         }
 
         console.log(ans);
-        this.answer = ans;
+
+        if (question_topic == "time-conversion") {
+          //Append word time to answer (hours, mins, secs)
+          this.answer = ans + " " + this.questionToUse;
+        } else {
+          this.answer = ans;
+        }
       } else if (
         question_topic == "missing-numbers" ||
         question_topic == "order-numbers" ||
         question_topic == "rounding" ||
         question_topic == "long-division" ||
         question_topic == "place-value-as-words" ||
-        question_topic == "time" || 
-        question_topic == "rearrange-formula"
+        question_topic == "time" ||
+        question_topic == "rearrange-formula" ||
+        question_topic == "shopping-problems"
       ) {
         ans = [];
 
@@ -825,7 +966,7 @@ export default {
     },
 
     parseLDSolution() {
-      let question = this.solutionQuestion;
+      let question = this.questionToUse;
       let solution = this.question.Solution;
 
       let html = "<table class='table table-bordered table-responsive'><tr>";
