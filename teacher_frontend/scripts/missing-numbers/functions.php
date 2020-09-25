@@ -114,8 +114,8 @@ function insert($data, $info)
         $question = json_encode($data[$i]['q']);
         $answer = json_encode($data[$i]['ans']);
         
-        $query ="INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Solution, Question_Weight, Question_Topic) 
-            VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '123', '656', 'missing-numbers')";
+        $query ="INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Question_Weight, Question_Topic) 
+            VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '100', 'missing-numbers')";
         
         if (!mysqli_query($conn, $query)) {
             return false;

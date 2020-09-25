@@ -96,6 +96,16 @@
 														</b-overlay>
 													</div>
 												</template>
+
+												<template>
+													<div style="margin-top: 10px;">
+														<b-overlay rounded opacity="0.6" spinner-small spinner-variant="success">
+															<b-button ref="button" block variant="danger" size="lg" onclick="schedule()">
+															Schedule
+															</b-button>
+														</b-overlay>
+													</div>
+												</template>
 											</div>
 										</div>
 									</div>
@@ -115,6 +125,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!-- Load Vue followed by BootstrapVue -->
 	<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+	<!-- Sweet Alert JS -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script>
 		var app = new Vue( {
 			el: "#app",

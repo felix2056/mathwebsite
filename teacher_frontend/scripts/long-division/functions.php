@@ -81,8 +81,6 @@ function insert($data, $info)
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    echo json_encode(['code' => 200, 'msg'=> $data]);
-
     /* Start maths_quiz transaction */
     $id_Teachers_FK = 1;
     $Status = 'Scheduled';
@@ -120,27 +118,17 @@ function insert($data, $info)
     /* Start maths_quiz_questions transaction */
     for ($i = 0; $i < count($data); $i++) {
         $question = json_encode($data[$i]['q']);
-        $answer = json_encode($data[$i]['ans']);
+        $answer = json_encode($data[$i]['ans'][0]);
+        $solution = divide($data[$i]['q']['D'], $data[$i]['q']['d']);
         
         $query ="INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Solution, Question_Weight, Question_Topic) 
-            VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '123', '656', 'missing-numbers')";
+            VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '$solution', '656', 'long-division')";
         
         if (!mysqli_query($conn, $query)) {
+            echo "Error: " . $query . "<br>" . mysqli_error($conn);
             return false;
         }
     }
-    // if(is_array($data)){
-    //     foreach ($data as $record) {
-    //         $question = serialize($record['q']);
-    //         $answer = serialize($record['ans']);
-
-    //         $query ="INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Solution, Question_Weight, Question_Topic) 
-    //         VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '123', '656', 'missing-numbers')";
-    //         if (!mysqli_query($conn, $query)) {
-    //             return false;
-    //         }
-    //     }
-    // }
 
     return true;
 }

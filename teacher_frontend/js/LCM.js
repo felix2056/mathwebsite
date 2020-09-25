@@ -75,7 +75,7 @@ function schedule() {
 
             $.ajax({
                 type: 'POST',
-                url: "scripts/HCF/schedule.php",
+                url: "scripts/LCM/schedule.php",
                 dataType: "json",
                 data: { generatedData: generated, quizData: quiz },
                 success: function (result) {

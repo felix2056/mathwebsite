@@ -126,8 +126,8 @@ function insert($data, $info)
             $question = $record['q'];
             $answer = $record['a'][0];
 
-            $query ="INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Solution, Question_Weight, Question_Topic) 
-            VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '123', '656', 'money-conversion')";
+            $query ="INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Question_Weight, Question_Topic) 
+            VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '100', 'money-conversion')";
             if (!mysqli_query($conn, $query)) {
                 return false;
             }

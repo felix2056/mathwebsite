@@ -41,7 +41,7 @@ function generate($L)
         $times = rand(2, 5);
         $nuOfSweets = rand(1, 10) * ($times + 1);
         $food = $db['food'][rand(0, count($db['food']) - 1)];
-        $question = "<p>$name1 and $name2 eat $nuOfSweets of $food althogether. $name2 eats <strong>$times</strong> times as many pieces of $food as $name1. </p>
+        $question = "<p>$name1 and $name2 eat $nuOfSweets of $food all together. $name2 eats <strong>$times</strong> times as many pieces of $food as $name1. </p>
         <p>How many pieces of $food does $name1 eat?<q2></p>";
         array_push($questions, $question);
         $question = $questions[rand(0, count($questions) - 1)];
@@ -207,8 +207,8 @@ function insert($data, $info)
         $question = $data[$i]['q'];
         $answer = json_encode($data[$i]['a']);
         
-        $query ="INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Solution, Question_Weight, Question_Topic) 
-            VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '123', '656', 'algebra-word-problems')";
+        $query ="INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Question_Weight, Question_Topic) 
+            VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '100', 'algebra-word-problems')";
         
         if (!mysqli_query($conn, $query)) {
             return false;

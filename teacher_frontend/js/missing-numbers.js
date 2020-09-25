@@ -23,6 +23,7 @@ function generate() {
             } else {
                 console.log(result);
                 result = JSON.parse(result);
+                
                 setGenerated(result, input);
                 $('#questions').html(populateQuestions(result));
             }

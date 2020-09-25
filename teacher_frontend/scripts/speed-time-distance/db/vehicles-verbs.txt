@@ -1,0 +1,20 @@
+airplane, flies
+bus, travels,
+bullet train, travels
+cargo ship, sails
+coach, travels 
+car, travels
+delivery van, moves
+ferry, cruises
+lorry, advances
+moped, travels
+motorcycle, travels
+mountain bike, travels
+racing car, speeds
+raft, floats
+school bus, moves
+submarine, glides
+speedboat, skims
+taxi, travels
+tram, travels
+tractor, travels

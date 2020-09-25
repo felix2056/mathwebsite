@@ -73,11 +73,16 @@ function insert($data, $info)
     /* Start maths_quiz_questions transaction */
     if(is_array($data)){
         foreach ($data as $record) {
-            $question = $record['q'];
+            $question = array();
+
+            $question['q'] = $record['q'];
+            $question['place'] = $record['place'];
+
+            $question = json_encode($question);
             $answer = $record['ans'];
 
-            $query ="INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Solution, Question_Weight, Question_Topic) 
-            VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '123', '656', 'rounding')";
+            $query ="INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Question_Weight, Question_Topic) 
+            VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '100', 'rounding')";
             if (!mysqli_query($conn, $query)) {
                 return false;
             }

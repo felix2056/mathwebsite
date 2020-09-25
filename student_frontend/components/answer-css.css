@@ -1,211 +1,408 @@
-.router-link-active{
-    z-index: 2;
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+.router-link-active {
+  z-index: 2;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
 }
-.router-link-exact-active{
-    z-index: 2;
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+.router-link-exact-active {
+  z-index: 2;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 /* --------------------------------------------------
  :: BASIC OPERATIONS EXERCISE
  -------------------------------------------------- */
 
-.basic-operations p{
-	text-align: right;
+.basic-operations p {
+  text-align: right;
 }
-.basic-operations p span:first-child{
-	float: left;
-	font-size: 2rem;
-	padding:0 0 0 .5rem!important;
+.basic-operations p span:first-child {
+  float: left;
+  font-size: 2rem;
+  padding: 0 0 0 0.5rem !important;
 }
-.basic-operations p span{
-	margin-right:5px;
+.basic-operations p span {
+  margin-right: 5px;
 }
-.basic-operations p:last-child{
-	margin-bottom: 0;
+.basic-operations p:last-child {
+  margin-bottom: 0;
 }
 
 /* --------------------------------------------------
  :: 2: MISSING NUMBERS
  -------------------------------------------------- */
- .missing-numbers p ul li ul li {
-	margin: 0 2rem 1rem 0;
-	padding: 1rem 1rem .75rem 1rem;
-	background: rgba(0, 0, 0, .04);
-	border-radius: .5rem;
+.missing-numbers p ul li ul li {
+  margin: 0 2rem 1rem 0;
+  padding: 1rem 1rem 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 0.5rem;
 }
 .missing-numbers p ul li ul li input {
-	max-width: 4rem;
-	margin:0 .5rem .25rem 0;
-	text-align: center;
+  max-width: 4rem;
+  margin: 0 0.5rem 0.25rem 0;
+  text-align: center;
 }
-
 
 /* --------------------------------------------------
  :: 3: ORDER NUMBERS EXERCISE
  -------------------------------------------------- */
 .order-numbers p ul li ul {
-    list-style: none;
-    padding: 0 2.5rem 0 1rem;
+  list-style: none;
+  padding: 0 2.5rem 0 1rem;
 }
 
 .order-numbers p ul li ul li {
-    margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 .order-numbers p ul li ul li input {
-    width: 5rem;
-    display: inline-flex;
-    text-align: center;
+  width: 5rem;
+  display: inline-flex;
+  text-align: center;
 }
 
 .order-numbers p ul li ul li input:first-child {
-    margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 /* --------------------------------------------------
  :: 4: WRITING NUMBERS
  -------------------------------------------------- */
- .writing-numbers p ul li {
-    margin: 0 2rem 1rem 0;
-    padding: 1rem;
-    background: rgba(0, 0, 0, .04);
-    border-radius: .5rem;
-   }
-   
-   .writing-numbers p div {
-    display: flex;
-    align-content: space-between;
-    align-items: center;
-   }
-   
-   .writing-numbers p div p {
-    margin-bottom: 0;
-    display: inline-block;
-   }
-   
-   .writing-numbers p div p:first-of-type {
-    margin-right: 1rem;
-    font-size: 1.25rem;
-    font-weight: 500;
-   }
-   
-   .writing-numbers p div input {
-    width: 5rem;
-    text-align: right;
-   }
-   
-   .writing-numbers p ul.form-group {
-    margin-bottom: 0;
-   }
-   
-   .writing-numbers p ul.form-group li {
-    padding: 0;
-    margin: 0 0 .5rem 0;
-    background: none;
-   }
-   
-   .writing-numbers p ul.form-group li:last-of-type {
-    margin-bottom: 0;
-   }
+.writing-numbers p ul li {
+  margin: 0 2rem 1rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 0.5rem;
+}
 
-/* --------------------------------------------------
- :: MONEY COUNTING EXERCISE
- -------------------------------------------------- */
-.money-counting p ul li{ margin:0 2rem 1rem 0; padding:1rem; border-radius:.5rem; background:rgba(0, 0, 0, .04); }
-.money-counting p ul li input{ display:inline-block; max-width:5rem; margin:1rem 0; }
-.money-choice .custom-control{ margin-bottom:1rem; }
-.money-choice.form-group label img{ margin-right:1rem; }
-.money-choice.form-group li label img:last-child{ margin-right:0; }
-.counting-money{ display:inline-flex; flex-direction:row; margin:0; padding:0; background:#fff; flex-wrap:wrap; }
-.counting-money li{ margin:0 !important; list-style:none; background:none !important; }
-.coin{ width:8rem; }
-.note{ width:15rem; }
+.writing-numbers p div {
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+}
 
-/* --------------------------------------------------
- :: ROMAN NUMBERS
- -------------------------------------------------- */
-.roman-numbers p ul li{
-    margin:0 2rem 1rem 0;
-    padding:1rem;
-    background: rgba(0,0,0,.04);
-    border-radius: .5rem;
+.writing-numbers p div p {
+  margin-bottom: 0;
+  display: inline-block;
 }
-.roman-numbers p ul li div{
-    display: inline-flex;
-    align-items: center;
-} 
-.roman-numbers p ul li div span:first-of-type{
-    width:5rem;
-    text-align: right;
+
+.writing-numbers p div p:first-of-type {
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
-.roman-numbers p ul li div span:nth-of-type(2){
-    margin:0 .5rem;
+
+.writing-numbers p div input {
+  width: 5rem;
+  text-align: right;
 }
-.roman-numbers p ul li input{
-    width:6rem;
-    font-weight: bold;
+
+.writing-numbers p ul.form-group {
+  margin-bottom: 0;
+}
+
+.writing-numbers p ul.form-group li {
+  padding: 0;
+  margin: 0 0 0.5rem 0;
+  background: none;
+}
+
+.writing-numbers p ul.form-group li:last-of-type {
+  margin-bottom: 0;
 }
 
 /* --------------------------------------------------
  :: 5. ROUNDING NUMBERS EXERCISE
  -------------------------------------------------- */
-.rounding p ul li{
-	margin:0 2rem 1rem 0;
-	padding:1rem;
-	background: rgba(0,0,0,.04);
-	border-radius: .5rem;
+.rounding li {
+  margin: 0 2rem 1rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 0.5rem;
 }
-.rounding p ul li span{
-	font-size:1.5rem;
+.rounding li span {
+  font-size: 1.5rem;
 }
-.rounding p ul li input{
-	max-width:4.5rem;
-	display: inline-flex;
+.rounding li input {
+  max-width: 4.5rem;
+  display: inline-flex;
+}
+
+/* --------------------------------------------------
+ :: REARRANGE FORMULA
+ -------------------------------------------------- */
+.rearrange-formula li {
+  margin: 0 2rem 1rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 0.5rem;
+}
+.rearrange-formula li input {
+  display: inline-flex;
+  width: 6rem;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+.rearrange-formula li p:first-child input {
+  font-size: 150% !important;
+  width: 9rem;
+}
+
+/* --------------------------------------------------
+ :: MONEY COUNTING EXERCISE
+ -------------------------------------------------- */
+.money-counting p ul li {
+  margin: 0 2rem 1rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.04);
+}
+.money-counting p ul li input {
+  display: inline-block;
+  max-width: 5rem;
+  margin: 1rem 0;
+}
+.money-choice .custom-control {
+  margin-bottom: 1rem;
+}
+.money-choice.form-group label img {
+  margin-right: 1rem;
+}
+.money-choice.form-group li label img:last-child {
+  margin-right: 0;
+}
+.counting-money {
+  display: inline-flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  flex-wrap: wrap;
+}
+.counting-money li {
+  margin: 0 !important;
+  list-style: none;
+  background: none !important;
+}
+.coin {
+  width: 8rem;
+}
+.note {
+  width: 15rem;
+}
+
+/* --------------------------------------------------
+ :: ROMAN NUMBERS
+ -------------------------------------------------- */
+.roman-numbers p ul li {
+  margin: 0 2rem 1rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 0.5rem;
+}
+.roman-numbers p ul li div {
+  display: inline-flex;
+  align-items: center;
+}
+.roman-numbers p ul li div span:first-of-type {
+  width: 5rem;
+  text-align: right;
+}
+.roman-numbers p ul li div span:nth-of-type(2) {
+  margin: 0 0.5rem;
+}
+.roman-numbers p ul li input {
+  width: 6rem;
+  font-weight: bold;
+}
+
+/* --------------------------------------------------
+ :: 5. ROUNDING NUMBERS EXERCISE
+ -------------------------------------------------- */
+.rounding p ul li {
+  margin: 0 2rem 1rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 0.5rem;
+}
+.rounding p ul li span {
+  font-size: 1.5rem;
+}
+.rounding p ul li input {
+  max-width: 4.5rem;
+  display: inline-flex;
 }
 
 /* --------------------------------------------------
  :: HCF and LCM
  -------------------------------------------------- */
- .HCF p, .LCM p {margin:0 2rem 1rem 0;padding:1rem;border-radius:.5rem;background:rgba(0, 0, 0, .04);}
- .HCF p,.LCM p{text-align:right;}
- .HCF p span,.LCM p  span{display:inline-block;width:2rem;margin-right:1rem;}
- .HCF p:last-child span,.LCM p:last-child span{margin-right:0 !important;}
- .HCF p span.line,.LCM p span.line{width:5rem;margin-right:0;border-bottom:1px solid #000;}
- .LCM p li p span.line{width:12rem;}
- .HCF p input,.LCM p input{display:inline-flex;width:5rem;margin-left:.5rem;}
+.HCF p,
+.LCM p {
+  margin: 0 2rem 1rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.04);
+}
+.HCF p,
+.LCM p {
+  text-align: right;
+}
+.HCF p span,
+.LCM p span {
+  display: inline-block;
+  width: 2rem;
+  margin-right: 1rem;
+}
+.HCF p:last-child span,
+.LCM p:last-child span {
+  margin-right: 0 !important;
+}
+.HCF p span.line,
+.LCM p span.line {
+  width: 5rem;
+  margin-right: 0;
+  border-bottom: 1px solid #000;
+}
+.LCM p li p span.line {
+  width: 12rem;
+}
+.HCF p input,
+.LCM p input {
+  display: inline-flex;
+  width: 5rem;
+  margin-left: 0.5rem;
+}
 
- /* --------------------------------------------------
+/* --------------------------------------------------
  :: TIME 
  -------------------------------------------------- */
-.time li{ margin:0 2rem 1rem 0; padding:1rem; border-radius:.5rem; background:rgba(0,0,0,.04); }
-.time li div{ display:flex; align-items:center; }
-.time li table{ float:right; width:auto; margin:0; }
-.time th{ text-align:center; }
-.time td,.time td input{ text-align:right; }
-.time td input{ width:4rem; }
-.time li span{ font-size:2.5rem; float:left; padding:0 .5rem; }
-.time .solution{ display:block; margin:.5rem 0; }
-.time .solution table{ float:none; width:100%; }
+.time li {
+  margin: 0 2rem 1rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.04);
+}
+.time li div {
+  display: flex;
+  align-items: center;
+}
+.time li table {
+  float: right;
+  width: auto;
+  margin: 0;
+}
+.time th {
+  text-align: center;
+}
+.time td,
+.time td input {
+  text-align: right;
+}
+.time td input {
+  width: 4rem;
+}
+.time li span {
+  font-size: 2.5rem;
+  float: left;
+  padding: 0 0.5rem;
+}
+.time .solution {
+  display: block;
+  margin: 0.5rem 0;
+}
+.time .solution table {
+  float: none;
+  width: 100%;
+}
 
- 
 /* --------------------------------------------------
   :: MONEY CONVERSIONS
 -------------------------------------------------- */
-.money-conversion ul li{ margin:0 2rem 1rem 0; padding:1rem; border-radius:.5rem; background:rgba(0, 0, 0, .04); }
-.money-conversion ul li input{ display:inline-flex; width:4rem; margin-left:1rem; }
-.money-conversion li .input-group{ display:inline-flex; }
-.money-conversion li .input-group input{ display:inline-flex; width:4rem; }
+.money-conversion ul li {
+  margin: 0 2rem 1rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.04);
+}
+.money-conversion ul li input {
+  display: inline-flex;
+  width: 4rem;
+  margin-left: 1rem;
+}
+.money-conversion li .input-group {
+  display: inline-flex;
+}
+.money-conversion li .input-group input {
+  display: inline-flex;
+  width: 4rem;
+}
 
+/* --------------------------------------------------
+ :: LONG DIVISION EXERCISES
+ -------------------------------------------------- */
+.long-division li {
+  margin: 0 3.5rem 1rem 0;
+  padding: 1rem 0.5rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 0.5rem;
+  list-style: none;
+}
+.long-division li p {
+  text-align: center;
+}
+.long-division li span {
+  padding: 0.25rem;
+}
+.long-division li span:nth-child(2) {
+  border-left: 2px solid rgba(0, 0, 0, 0.4);
+  border-top: 2px solid rgba(0, 0, 0, 0.4);
+}
+.long-division li span:nth-child(3) {
+  display: inline-block;
+}
+.long-division input {
+  display: inline-flex;
+  /*width:3rem;*/
+}
+.long-division p label {
+  padding: 0 0.5rem;
+}
+.border-right-thick {
+  border-right: 4px solid black !important;
+}
+.border-bottom-thick-gray {
+  border-bottom: 4px solid gray !important;
+}
+.border-bottom-thick-black {
+  border-bottom: 4px solid black !important;
+}
+.drop-arrow {
+  font-size: 1.5rem;
+  color: red;
+}
+
+/* --------------------------------------------------
+ :: PLACE VALUE EXERCISE
+ -------------------------------------------------- */
+.place-value ul li {
+  margin: 0 2rem 1rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 0.5rem;
+}
+.place-value ul li span {
+  font-size: 1.5rem;
+}
+
+.place-value-as-words .N2W {
+  list-style-type: upper-alpha;
+}
 
 .q_header {
-    border-bottom: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
 .lead {
-    font-weight: 600;
+  font-weight: 600;
 }

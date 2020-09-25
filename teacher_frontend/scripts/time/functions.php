@@ -2,6 +2,8 @@
 
 function generate($level, $operation)
 {
+   global $solution;
+
    if ($operation == "plus") {
       if ($level == "easy") {
          $S = 0;
@@ -114,6 +116,41 @@ function generate($level, $operation)
  </table>
 </div>
  ';
+
+ $solutionHTML = '<div class="solution" id="<sol>">
+ <table>
+    <tbody>
+        <tr>
+            <td>' . $s1 . ' seconds + ' . $s2 . ' seconds =</td>
+            <td>00 hours</td>
+            <td>' . ((int)(($s1 + $s2) / 60)) . ' mins</td>
+            <td>' . (($s1 + $s2) % 60) . ' seconds</td>
+        </tr>
+       <tr>
+          <td>' . $m1 . ' mins + ' . $m2 . ' mins =</td>
+          <td>' . ((int)(($m1 + $m2) / 60)) . ' hour</td>
+          <td>' . (($m1 + $m2) % 60) . ' mins</td>
+          <td>00 seconds</td>
+       </tr>
+       <tr>
+          <td>' . $h1 . ' hours + ' . $h2 . ' hours = </td>
+          <td>' . ($h1 + $h2) . ' hours</td>
+          <td>00 mins</td>
+          <td>00 seconds</td>
+       </tr>
+       <tr>
+          <td>Answer = </td>
+          <td>' . $H . ' hours</td>
+          <td>' . $M . ' mins</td>
+          <td>' . $S . ' seconds</td>
+       </tr>
+    </tbody>
+ </table>
+</div>
+ ';
+
+ setSolution($solutionHTML);
+
    } else {
       if ($level == "easy") {
          $S = 0;
@@ -236,9 +273,42 @@ function generate($level, $operation)
  </table>
 </div>
  ';
+
+ $solutionHTML = '
+ <div class="solution" id="<sol>">
+ <table>
+    <tbody>
+        <tr>
+            <td>' . $s1 . ' seconds - ' . $s2 . ' seconds =</td>
+            <td>00 hours</td>
+            <td>00 mins</td>
+            <td>' . ($s1 - $s2) . ' seconds</td>
+        </tr>
+       <tr>
+          <td>' . $m1 . ' mins - ' . $m2 . ' mins =</td>
+          <td>00 hour</td>
+          <td>' . ($m1 - $m2) . ' mins</td>
+          <td>00 seconds</td>
+       </tr>
+       <tr>
+          <td>' . $h1 . ' hours - ' . $h2 . ' hours = </td>
+          <td>' . ($h1 - $h2) . ' hours</td>
+          <td>00 mins</td>
+          <td>00 seconds</td>
+       </tr>
+       <tr>
+          <td>Answer = </td>
+          <td>' . $H . ' hours</td>
+          <td>' . $M . ' mins</td>
+          <td>' . $S . ' seconds</td>
+       </tr>
+    </tbody>
+ </table>
+</div>
+ ';
+
+ setSolution($solutionHTML);
    }
-
-
 
    $answer = [$H, $M, $S];
    return array(
@@ -247,8 +317,12 @@ function generate($level, $operation)
    );
 }
 
+function setSolution($solutionHTML) {
+   $solutionFILE = fopen('solution.txt', 'w') or die("Unable to open file!");
 
-
+   fwrite($solutionFILE, $solutionHTML);
+   fclose($solutionFILE);
+}
 
 function check($ans, $cans)
 {
@@ -270,6 +344,11 @@ function insert($data, $info)
    if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
    }
+
+   $solutionFILE = fopen("solution.txt", "r") or die("Unable to open file!");
+   $solution = fread($solutionFILE, filesize("solution.txt"));
+   
+   fclose($solutionFILE);
 
    /* Start maths_quiz transaction */
    $id_Teachers_FK = 1;
@@ -311,24 +390,12 @@ function insert($data, $info)
       $answer = json_encode($data[$i]['a']);
 
       $query = "INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Solution, Question_Weight, Question_Topic) 
-            VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '123', '656', 'time')";
+            VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '$solution', '100', 'time')";
 
       if (!mysqli_query($conn, $query)) {
          return false;
       }
    }
-   // if(is_array($data)){
-   //     foreach ($data as $record) {
-   //         $question = serialize($record['q']);
-   //         $answer = serialize($record['ans']);
-
-   //         $query ="INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Solution, Question_Weight, Question_Topic) 
-   //         VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '123', '656', 'missing-numbers')";
-   //         if (!mysqli_query($conn, $query)) {
-   //             return false;
-   //         }
-   //     }
-   // }
 
    return true;
 }

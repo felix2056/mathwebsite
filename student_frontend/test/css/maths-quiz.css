@@ -1,0 +1,390 @@
+/* --------------------------------------------------
+ :: MATHS QUIZ
+ -------------------------------------------------- */
+/* Hide Arrows From Input Number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+p:first-letter,
+td:first-letter{
+ text-transform: capitalize;
+}
+.stage .card{
+	background:#90A4AE;
+	border:none;
+	-webkit-box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.2);
+	box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.2);
+}
+.exercise-container{
+	margin-top: 2rem;
+}
+.exercise-container:first-child{
+	margin-top: 0;
+}
+.exercise-container .badge{
+	background-color: #607D8B;
+	font-size:90%;
+}
+.exercise{
+	border-radius:.25rem;
+	padding:0.25rem 1rem;
+	margin:1rem 0;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+}
+.exercise-header{
+	margin:1rem 0;
+}
+.exercise h6{
+	margin:0;
+	max-width: 90%;
+}
+.exercise > .actions {
+  position: relative;
+  right: 15px;
+  z-index: 2;
+  top: 18px;
+}
+
+.exercise-body{
+	margin:2rem 0;
+}
+.exercise-body ul{
+    list-style-type: upper-alpha;
+}
+
+.custom-radio label{
+	font-size:100%;
+}
+/* --------------------------------------------------
+ :: ICONS
+ -------------------------------------------------- */
+
+/* --------------------------------------------------
+ :: UI DIV FORMAT
+ -------------------------------------------------- */
+.form-group ul.nav{
+	padding:.5rem;
+	border:1px solid rgba(0,0,0,0.125);
+	border-radius: .25rem;
+}
+.form-group ul.nav li ul.nav{
+	border:none;
+}
+
+ul.nav-pills.options li,
+ul.nav-pills.row-options li ul li{
+	margin:.1rem .2rem;
+}
+.minw-33 {
+    min-width: 33.33%;
+}
+ul.nav-pills.options li a,
+ul.nav-pills.row-options li ul li a{
+	background:#f8f9fa;
+}
+ul.nav-pills.options li a:hover,
+ul.nav-pills.row-options li ul li a:hover{
+	background:#dae0e5;
+}
+
+#format ul.nav-pills.row-options li ul li a{
+	width:100%;
+}
+#formatOptions input{
+	text-align: center;
+}
+
+/* --------------------------------------------------
+ :: BASIC OPERATIONS EXERCISE
+ -------------------------------------------------- */
+.basic-operations ul li{
+	margin:0 3.5rem 1rem 0;
+	padding:1rem .5rem;
+	background: rgba(0,0,0,.04);
+	border-radius: .5rem;
+}
+
+.basic-operations li p{
+	text-align: right;
+}
+.basic-operations li p span:first-child{
+	float: left;
+	font-size: 2rem;
+	padding:0 0 0 .5rem!important;
+}
+.basic-operations li p span{
+	margin-right:5px;
+}
+.basic-operations li p:last-child{
+	margin-bottom: 0;
+}
+.basic-operations p input{
+	max-width: 6rem;
+	text-align: right;
+	padding-right:5px;
+}
+
+
+/* --------------------------------------------------
+ :: ROUNDING NUMBERS EXERCISE
+ -------------------------------------------------- */
+.rounding ul li{
+	margin:0 2rem 1rem 0;
+	padding:1rem;
+	background: rgba(0,0,0,.04);
+	border-radius: .5rem;
+}
+.rounding ul li span{
+	font-size:1.5rem;
+}
+.rounding ul li input{
+	max-width:4.5rem;
+	display: inline-flex;
+}
+
+
+/* --------------------------------------------------
+ :: PLACE VALUE EXERCISE
+ -------------------------------------------------- */
+.place-value ul li{
+	margin:0 2rem 1rem 0;
+	padding:1rem;
+	background: rgba(0,0,0,.04);
+	border-radius: .5rem;
+}
+.place-value ul li span{
+	font-size:1.5rem;
+}
+
+/* --------------------------------------------------
+ :: MISSING NUMBERS
+ -------------------------------------------------- */
+.missing-numbers .exercise-body ul li ul li {
+	margin: 0 2rem 1rem 0;
+	padding: 1rem 1rem .75rem 1rem;
+	background: rgba(0, 0, 0, .04);
+	border-radius: .5rem;
+}
+.missing-numbers .exercise-body ul li ul li input {
+	max-width: 4rem;
+	margin:0 .5rem .25rem 0;
+	text-align: center;
+}
+/* --------------------------------------------------
+ :: ORDER NUMBERS EXERCISE
+ -------------------------------------------------- */
+      .order .exercise-body ul li ul {
+         list-style: none;
+         padding: 0 2.5rem 0 1rem;
+      }
+
+      .order .exercise-body ul li ul li {
+         margin: .5rem 0;
+      }
+
+      .order .exercise-body ul li ul li input {
+         width: 5rem;
+         display: inline-flex;
+         text-align: center;
+      }
+
+      .order .exercise-body ul li ul li input:first-child {
+         margin-right: .5rem;
+      }
+/* --------------------------------------------------
+ :: ROMAN NUMBERS
+ -------------------------------------------------- */
+.roman-numbers ul li{
+margin:0 2rem 1rem 0;
+padding:1rem;
+background: rgba(0,0,0,.04);
+border-radius: .5rem;
+}
+.roman-numbers ul li div{
+display: inline-flex;
+align-items: center;
+} 
+.roman-numbers ul li div span:first-of-type{
+width:5rem;
+text-align: right;
+}
+.roman-numbers ul li div span:nth-of-type(2){
+margin:0 .5rem;
+}
+.roman-numbers ul li input{
+width:6rem;
+font-weight: bold;
+}
+/* --------------------------------------------------
+ :: LONG DIVISION EXERCISES
+ -------------------------------------------------- */
+.long-division ul li{
+	margin:0 3.5rem 1rem 0;
+	padding:1rem .5rem;
+	background: rgba(0,0,0,.04);
+	border-radius: .5rem;
+}
+.long-division ul li p{
+	text-align: center;
+}
+.long-division ul li span{
+	padding:.25rem;
+}
+.long-division ul li span:first-child{
+	
+}
+.long-division ul li span:nth-child(2){
+	border-left: 2px solid rgba(0,0,0,0.4);
+	border-top: 2px solid rgba(0,0,0,0.4);
+}
+.long-division ul li span:nth-child(3){
+	display: inline-block;
+}
+.long-division ul input{
+	display: inline-flex;
+	width:3rem;
+}
+.long-division p label{
+	padding:0 .5rem;
+}
+
+/* --------------------------------------------------
+ :: HCF and LCM
+ -------------------------------------------------- */
+.HCF ul li,.LCM ul li{margin:0 2rem 1rem 0;padding:1rem;border-radius:.5rem;background:rgba(0, 0, 0, .04);}
+.HCF li p,.LCM li p{text-align:right;}
+.HCF li p span,.LCM li p span{display:inline-block;width:2rem;margin-right:1rem;}
+.HCF li p:last-child span,.LCM li p:last-child span{margin-right:0 !important;}
+.HCF li p span.line,.LCM li p span.line{width:5rem;margin-right:0;border-bottom:1px solid #000;}
+.LCM li p span.line{width:12rem;}
+.HCF ul li input,.LCM ul li input{display:inline-flex;width:5rem;margin-left:.5rem;}
+
+/* --------------------------------------------------
+ :: SPEED TIME DISTANCE
+ -------------------------------------------------- */
+.speed-time-distance ul li {
+margin: 0 2rem 1rem 0;
+padding: 1rem;
+background: rgba(0, 0, 0, .04);
+border-radius: .5rem;
+}
+.speed-time-distance ul li ul li{
+padding:0;
+background:none;
+list-style-type:lower-roman;
+}
+.speed-time-distance ul li ul li input{
+display: inline;
+width:5rem;
+}
+/* --------------------------------------------------
+ :: SHOPPING PROBLEMS
+ -------------------------------------------------- */
+.shopping-problems ul li {
+margin: 0 2rem 1rem 0;
+padding: 1rem;
+background: rgba(0, 0, 0, .04);
+border-radius: .5rem;
+width: 100%
+}
+
+table.shopping-menu td {
+width: 50%;
+}
+
+table.shopping-menu td span:nth-child(2) {
+float: right;
+}
+
+.shopping-problems ul li ul li {
+padding: 0;
+background: none;
+list-style-type: lower-roman;
+}
+
+.shopping-problems ul li ul li input {
+display: inline;
+width: 5rem;
+}
+
+table.shopping-receipt {
+margin: 1rem auto;
+width: 80%;
+background: #fff;
+}
+
+table.shopping-receipt th:nth-child(3),
+table.shopping-receipt td:nth-child(3) {
+text-align: right;
+}
+
+table.shopping-receipt tr:last-child td:nth-child(2) {
+text-align: right;
+font-weight: bold;
+}
+
+/* --------------------------------------------------
+ :: ORIGINAL PRICE
+ -------------------------------------------------- */
+.original-price ul li {
+	margin: 0 2rem 1rem 0;
+	padding: 1rem;
+	background: rgba(0, 0, 0, .04);
+	border-radius: .5rem;
+}
+
+.original-price ul li input {
+	display: inline-flex;
+	width: 4rem;
+	margin-left: 1rem;
+}
+
+.original-price li .input-group {
+	display: inline-flex;
+}
+
+.original-price li .input-group input {
+	display: inline-flex;
+	width: 4rem;
+}
+/* --------------------------------------------------
+ :: REARRANGE FORMULA
+ -------------------------------------------------- */
+.rearrange-formula ul li {
+margin: 0 2rem 1rem 0;
+padding: 1rem;
+background: rgba(0, 0, 0, .04);
+border-radius: .5rem;
+}
+.rearrange-formula ul li input{
+display: inline-flex;
+width: 6rem;
+margin:0 .5rem;
+text-align: center;	 
+}
+.rearrange-formula ul li p:first-child input{
+font-size:150%!important;
+width:9rem;
+}
+
+/* --------------------------------------------------
+ :: UI DIV FORMAT
+ -------------------------------------------------- */
+.algebra-word-problems ul li{
+margin: 0 2rem 1rem 0;
+padding: 1rem;
+background: rgba(0, 0, 0, .04);
+border-radius: .5rem;	
+}

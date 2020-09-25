@@ -19,7 +19,8 @@ export default {
          
          <section id="MathsQuestionsList" class="col-4">
             <sidebar></sidebar>
-         </section>`,
+         </section>
+      </div>`,
 
     components: { Sidebar },
   }

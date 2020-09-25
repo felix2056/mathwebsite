@@ -119,6 +119,16 @@
 														</b-overlay>
 													</div>
 												</template>
+
+												<template>
+													<div style="margin-top: 10px;">
+														<b-overlay rounded opacity="0.6" spinner-small spinner-variant="success">
+															<b-button ref="button" block variant="danger" size="lg" onclick="schedule()">
+																Schedule
+															</b-button>
+														</b-overlay>
+													</div>
+												</template>
 											</div>
 										</div>
 									</div>
