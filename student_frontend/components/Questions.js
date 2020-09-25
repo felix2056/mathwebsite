@@ -176,7 +176,7 @@ export default {
     },
 
     async getSingle() {
-      var url = `api/getSingle.php?question_id=${this.$route.params.question}`;
+      var url = `api/getsingle.php?question_id=${this.$route.params.question}`;
       axios.get(url).then((response) => {
         if (
           response.data.Question_Topic == "basic-operations" ||
