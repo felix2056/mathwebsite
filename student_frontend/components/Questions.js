@@ -17,7 +17,7 @@ export default {
                   <h4 class="align-self-center text-center">{{ howToAnswer }}</h4>
                   <!--insert question from db here-->
                   <p class="lead" v-html="question.Question"></p> 
-                  <div @click="getSolution()" v-if="shouldShowSolution" class="solution mb-2">
+                  <div @click="getSolution()" v-show="isGraded" v-if="shouldShowSolution && isGraded" class="solution mb-2">
                     <details>
                       <summary>Solution</summary>
                       <p v-html="solution"></p>
@@ -31,9 +31,6 @@ export default {
                     
                     <div v-if="shouldShow" class="form-group">
                         <div class="input-group mb-2 mr-sm-2">
-                           <div class="input-group-prepend">
-                              <div class="input-group-text">Rs</div>
-                           </div>
                            <input type="number" step="0.01" :disabled="isGraded" v-model="answer" class="form-control form-control-lg">
                         </div>
                      </div>
@@ -1067,27 +1064,8 @@ export default {
       });
     },
 
-    resolveAnswered(question_id) {
-      var url = "api/resolveAnswer.php";
-      axios
-        .post(url, formData, { headers })
-        .then((response) => {
-          this.submitting = false;
-          swal({
-            icon: "success",
-          });
-
-          console.log(response);
-          console.log(typeof response.data.ans);
-        })
-        .catch((error) => {
-          this.submitting = false;
-          console.log(error.response);
-        });
-    },
-
     setGrades() {
-      var percent = (this.correctAnswers.length / 100) * this.questions.length;
+      var percent = (this.correctAnswers.length / this.questions.length) * 100;
 
       if (percent > 10 && percent < 30) {
         this.message.header = "Average: Try harder next time";

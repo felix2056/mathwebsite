@@ -12,7 +12,7 @@ export default {
                   </router-link>
                </div>
             </div>
-            <button :disabled="!hasAnsweredAll" @click="getMyGrade()" class="btn btn-success btn-lg btn-block mt-4">Get My Grade</button>
+            <button v-show="!isGraded" :disabled="!hasAnsweredAll" @click="getMyGrade()" class="btn btn-success btn-lg btn-block mt-4">Get My Grade</button>
          </div>
       </div>`,
 
@@ -20,6 +20,8 @@ export default {
     return {
       questions: [],
       hasAnsweredAll: false,
+
+      isGraded: false
     };
   },
 
@@ -49,6 +51,11 @@ export default {
       var url = `api/getquestions.php?exercise_id=${this.$route.params.exercise}`;
       axios.get(url).then((response) => {
         this.questions = response.data;
+
+        //check at least one answer is already graded then hide get grades button
+        if (this.questions[0].Graded == "1") {
+          this.isGraded = true;
+        }
       });
     },
 

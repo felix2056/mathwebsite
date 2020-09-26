@@ -61,8 +61,8 @@ function getQuestions($exercise_id)
          * Next set question grade to an empty string and resolve if answer correct or incorrect
         **/
         
+        $row['Graded'] = $pupilsAnswer['Graded'];
         $row['Pupils_Answer'] = "";
-        $row['Question_Status'] = "";
         $row['Question_Grade'] = "";
 
         if (count($pupilsAnswer) > 0) {
@@ -265,9 +265,7 @@ function parseAnswer($question_topic, $answer) {
     $answer = json_encode($answer);
 
     //Then check quiz type by the question topic and parse answer correctly
-    if ($question_topic == "missing-numbers" || $question_topic == "order-numbers") {
-        $answer = json_encode(explode(',', $answer));
-    } elseif ($question_topic == "rearrange-formula" || $question_topic == "place-value-as-words" || $question_topic == "place-value" || $question_topic == "long-division" || $question_topic == "time" || $question_topic == "shopping-problems") { 
+    if ($question_topic == "rearrange-formula" || $question_topic == "place-value-as-words" || $question_topic == "place-value" || $question_topic == "long-division" || $question_topic == "time" || $question_topic == "shopping-problems" || $question_topic == "missing-numbers" || $question_topic == "order-numbers") { 
         $answer = json_decode($answer);
     } elseif ($question_topic == "algebra-word-problems") {
         $ans = json_decode(json_decode($answer));
