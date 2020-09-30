@@ -226,7 +226,7 @@ function insert($data, $info)
 
     /* Start maths_quiz_questions transaction */
     for ($i = 0; $i < count($data); $i++) {
-        $question = json_encode($data[$i]['q']);
+        $question = $data[$i]['q'];
         $answer = json_encode($data[$i]['a']);
         
         $query ="INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Question_Weight, Question_Topic) 

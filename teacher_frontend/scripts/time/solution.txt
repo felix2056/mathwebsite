@@ -8,21 +8,21 @@
             <td>0 seconds</td>
         </tr>
        <tr>
-          <td>45 mins + 14 mins =</td>
+          <td>0 mins + 0 mins =</td>
           <td>0 hour</td>
-          <td>59 mins</td>
+          <td>0 mins</td>
           <td>00 seconds</td>
        </tr>
        <tr>
-          <td>1 hours + 7 hours = </td>
-          <td>8 hours</td>
+          <td>5 hours + 4 hours = </td>
+          <td>9 hours</td>
           <td>00 mins</td>
           <td>00 seconds</td>
        </tr>
        <tr>
           <td>Answer = </td>
-          <td>8 hours</td>
-          <td>59 mins</td>
+          <td>9 hours</td>
+          <td>0 mins</td>
           <td>0 seconds</td>
        </tr>
     </tbody>

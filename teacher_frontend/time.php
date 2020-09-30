@@ -3,11 +3,11 @@
 
 <head>
 	<!-- Required meta tags -->
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-	<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
-	<link type="text/css" rel="stylesheet" href="css/my-css.css"/>
-	<link type="text/css" rel="stylesheet" href="css/maths-quiz.css"/>>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="css/my-css.css" />
+	<link type="text/css" rel="stylesheet" href="css/maths-quiz.css" />
 	<title>Time</title>
 </head>
 
@@ -38,9 +38,8 @@
 																	<h6 class="align-self-center">Solve the following</h6>
 																	<div class="actions">
 																		<button class="btn btn-light">
-                                                         <i class="icon trash"></i>
-                                                      </button>
-																	
+																			<i class="icon trash"></i>
+																		</button>
 																	</div>
 																</div>
 																<div class="exercise-body mb-3">
@@ -117,16 +116,16 @@
 														</b-overlay>
 													</div>
 												</template>
-												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+						</div>
 					</section>
 					<!--/end row-->
-					</div>
 				</div>
+			</div>
 		</section>
 	</main>
 	<!-- Javascript -->
@@ -139,9 +138,9 @@
 	<!-- Sweet Alert JS -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script>
-		var app = new Vue( {
+		var app = new Vue({
 			el: "#app",
-		} );
+		});
 	</script>
 </body>
 
