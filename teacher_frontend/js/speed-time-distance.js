@@ -1,6 +1,7 @@
 $(document).ready(() => {
     let generated;
     let quiz;
+    let mixed;
 
     generate();
 });
@@ -19,7 +20,6 @@ function generate() {
             if (result == '0') {
                 alert('Houston, we have a problem!');
             } else {
-                console.log(result);
                 result = JSON.parse(result);
 
                 setGenerated(result, input);
@@ -31,10 +31,21 @@ function generate() {
 }
 
 function setGenerated(result) {
+    //check if mixed = true;
+    
+
     generated = result;
 }
 
 function schedule() {
+    var std = $('input[name="sdt"]:checked').val();
+
+    if (std=='all') {
+        mixed = "mixed";
+    } else {
+        mixed = "unmixed";
+    }
+
     Swal.mixin({
         title: 'Schedule This Exercise Set?',
         text: "Commence scheduling and save this excercise to database!",
@@ -70,7 +81,8 @@ function schedule() {
             quiz.Nquestions = $('#Nquestions').val();
             quiz.start_date = $('#start_date').val();
             quiz.end_date = $('#end_date').val();
-            
+            quiz.mixed = mixed;
+
             console.log(quiz);
 
             $.ajax({

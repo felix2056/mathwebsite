@@ -160,7 +160,7 @@ function submitAnswer($answer, $question_id, $question_topic)
     $correctAns = mysqli_fetch_assoc($checkquery);
     
     //parse answer to match all quiz types and return the correct format
-    $correctAns['Answer'] = parseAnswer($question_topic, $correctAns['Answer']);
+    $correctAns['Answer'] = parseAnswer($question_topic, $answer, $correctAns['Answer']);
 
     $isCorrect = $answer == $correctAns['Answer'];
 
@@ -260,19 +260,25 @@ function parseSolution($question_topic, $solution) {
     return $solution;
 }
 
-function parseAnswer($question_topic, $answer) {
+function parseAnswer($question_topic, $answer, $correct) {
     //First encode correct answer as JSON to match the submitted JSON answer by student
-    $answer = json_encode($answer);
+    $correct = json_encode($correct);
 
     //Then check quiz type by the question topic and parse answer correctly
-    if ($question_topic == "rearrange-formula" || $question_topic == "place-value-as-words" || $question_topic == "place-value" || $question_topic == "long-division" || $question_topic == "time" || $question_topic == "shopping-problems" || $question_topic == "missing-numbers" || $question_topic == "order-numbers") { 
-        $answer = json_decode($answer);
+    if ($question_topic == "rearrange-formula" || $question_topic == "place-value-as-words" || $question_topic == "place-value" || $question_topic == "long-division" || $question_topic == "time" || $question_topic == "shopping-problems" || $question_topic == "missing-numbers" || $question_topic == "order-numbers" || $question_topic == "speed-time-distance") { 
+        $correct = json_decode($correct);
     } elseif ($question_topic == "algebra-word-problems") {
-        $ans = json_decode(json_decode($answer));
-        $answer = json_encode($ans[0]);
+        $ans = json_decode(json_decode($correct));
+        if ($answer ==  json_encode($ans[0])) {
+            $correct = json_encode($ans[0]);   
+        } elseif ($answer ==  json_encode($ans[1])) {
+            $correct = json_encode($ans[1]);
+        } else {
+            $correct = json_encode($ans[0]);
+        }
     }
 
-    return $answer;
+    return $correct;
 }
 
 function parsePupilsAnswer($question_topic, $answer) {

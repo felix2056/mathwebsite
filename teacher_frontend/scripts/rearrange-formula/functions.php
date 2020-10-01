@@ -34,7 +34,7 @@ function generate($L, $type)
         '<p><input type="text" class="form-control" placeholder="' . $n1 . '" disabled><span>&times;</span><input type="text" class="form-control" placeholder="' . $n2 . '" disabled><span>=<q4><btn4></p>'
     ];
     $q3 = '<p><input type="text" class="form-control" placeholder="' . $n1 . '" disabled><span>&times;</span><q3><span>=</span><input type="text" class="form-control" placeholder="' . $n3 . '" disabled><span>-</span><input type="text" class="form-control" placeholder="' . $n1 . '" disabled><btn3></p>';
-    shuffle($qArr);
+    //shuffle($qArr);
     $question = $question . $qArr[0] . $qArr[1] . $q3;
     array_push($questions, $question);
     $answer = [$n1, $n2 / $devide, $n2 - 1,$n3];
@@ -103,7 +103,7 @@ function insert($data, $info)
 
     /* Start maths_quiz_questions transaction */
     for ($i = 0; $i < count($data); $i++) {
-        $question = json_encode($data[$i]['q']);
+        $question = $data[$i]['q'];
         //$answer = json_encode($data[$i]['a']);
         
         $answer = json_encode(array_slice($data[$i]['a'], 1));

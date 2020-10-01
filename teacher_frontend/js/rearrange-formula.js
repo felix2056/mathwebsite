@@ -64,7 +64,7 @@ function schedule() {
       ]).then((result) => {
         if (result.value) {
             quiz = {};
-            quiz.topic = 'Rearrange Formular';
+            quiz.topic = 'Rearrange Formula';
             quiz.instruction = result.value[0];
             quiz.total_marks = result.value[1];
 

@@ -450,7 +450,7 @@ table.shopping-menu td span:nth-child(2) {
 }
 
 .badge {
-  background-color: #607D8B;
+  background-color: #607d8b;
   font-size: 90%;
 }
 
@@ -472,6 +472,25 @@ table.shopping-receipt tr:last-child td:nth-child(2) {
 
 .place-value-as-words .N2W {
   list-style-type: upper-alpha;
+}
+
+/* --------------------------------------------------
+ :: SPEED TIME DISTANCE
+ -------------------------------------------------- */
+.speed-time-distance li {
+  margin: 0 2rem 1rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 0.5rem;
+}
+.speed-time-distance li ul li {
+  padding: 0;
+  background: none;
+  list-style-type: lower-roman;
+}
+.speed-time-distance li ul li input {
+  display: inline;
+  width: 5rem;
 }
 
 .q_header {

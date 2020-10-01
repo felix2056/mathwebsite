@@ -16,7 +16,7 @@ export default {
                   <!-- <h1 class="mb-5 q_header">Question - {{ $route.params.question  }}</h1> -->
                   <h4 class="align-self-center text-center">{{ howToAnswer }}</h4>
                   <!--insert question from db here-->
-                  <p class="lead" v-html="question.Question"></p> 
+                  <p v-html="question.Question"></p> 
                   <div @click="getSolution()" v-show="isGraded" v-if="shouldShowSolution && isGraded" class="solution mb-2">
                     <details>
                       <summary>Solution</summary>
@@ -184,8 +184,7 @@ export default {
           response.data.Question_Topic == "LCM" ||
           response.data.Question_Topic == "money-conversion" ||
           response.data.Question_Topic == "algebra-word-problems" ||
-          response.data.Question_Topic == "original-price" ||
-          response.data.Question_Topic == "speed-time-distance"
+          response.data.Question_Topic == "original-price"
         ) {
           this.question = response.data;
           this.answer = response.data.Pupils_Answer;
@@ -221,6 +220,11 @@ export default {
         } else if (response.data.Question_Topic == "rearrange-formula") {
           this.shouldShow = false;
           this.question = this.populateRFQuestions(response.data);
+        } else if (response.data.Question_Topic == "speed-time-distance") {
+          this.question = this.populateSTDQuestions(
+            response.data,
+            response.data.Solution == "mixed"
+          );
         }
 
         if (this.question.Question_Grade != "") {
@@ -744,27 +748,27 @@ export default {
       } else {
         html = html.replace(
           "<q1>",
-          `<input type="number" class="q1 form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}1" ans='${answer[4]}' >
+          `<input type="number" class="q1 form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}1" value="${result.Pupils_Answer[0]}"' >
               `
         );
         html = html.replace(
           "<q2>",
-          `<input type="text" class=" q2 form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}2" value="${result.Pupils_Answer[0]}" >
+          `<input type="text" class=" q2 form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}2" value="${result.Pupils_Answer[1]}" >
                `
         );
         html = html.replace(
           "<q3>",
-          `<input type="text" class="q3 form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}3" value="${result.Pupils_Answer[1]}"'>
+          `<input type="text" class="q3 form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}3" value="${result.Pupils_Answer[2]}"'>
              `
         );
         html = html.replace(
           "<q4>",
-          `<input type="text" class="q4 form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}4" value="${result.Pupils_Answer[2]}"'>
+          `<input type="text" class="q4 form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}4" value="${result.Pupils_Answer[3]}"'>
               `
         );
         html = html.replace(
           "<q5>",
-          `<input type="text" class="q5 form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}5" value="${result.Pupils_Answer[3]}"'>
+          `<input type="text" class="q5 form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}5" value="${result.Pupils_Answer[4]}"'>
            </li>`
         );
       }
@@ -832,6 +836,62 @@ export default {
       return result;
     },
 
+    populateSTDQuestions(result, mixed = false) {
+      var html = "";
+
+      var question = result.Question;
+      var answer = result.Answer;
+
+      if (typeof result.Pupils_Answer == "string") {
+        html = html + `<li>`;
+        html = html + question;
+        if (mixed == true) {
+          html = html.replace(
+            "<q1>",
+            `<input type="number" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}1" >`
+          );
+          html = html.replace(
+            "<q2>",
+            `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}2" >`
+          );
+          html = html.replace(
+            "<q3>",
+            `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}3">
+         </li></ul></li>`
+          );
+        } else {
+          html =
+            html +
+            `<input type="number" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}">`;
+        }
+      } else {
+        html = html + `<li>`;
+        html = html + question;
+        if (mixed == true) {
+          html = html.replace(
+            "<q1>",
+            `<input type="number" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}1" value="${result.Pupils_Answer[0]}" >`
+          );
+          html = html.replace(
+            "<q2>",
+            `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}2" value="${result.Pupils_Answer[1]}" >`
+          );
+          html = html.replace(
+            "<q3>",
+            `<input type="text" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}3" value="${result.Pupils_Answer[2]}">
+         </li></ul></li>`
+          );
+        } else {
+          html =
+            html +
+            `<input type="number" class="form-control q_${this.$route.params.question}" id="q_${this.$route.params.question}" value="${result.Pupils_Answer[0]}">`;
+        }
+      }
+
+      result.Question = html;
+      return result;
+    },
+
     parseSubmitAnswer() {
       let ans, question_id, question_topic, self;
 
@@ -849,8 +909,7 @@ export default {
         question_topic == "HCF" ||
         question_topic == "LCM" ||
         question_topic == "money-conversion" ||
-        question_topic == "algebra-word-problems" ||
-        question_topic == "speed-time-distance"
+        question_topic == "algebra-word-problems"
       ) {
         if (this.answer == "") {
           swal({
@@ -900,7 +959,8 @@ export default {
         question_topic == "place-value-as-words" ||
         question_topic == "time" ||
         question_topic == "rearrange-formula" ||
-        question_topic == "shopping-problems"
+        question_topic == "shopping-problems" || 
+        question_topic == "speed-time-distance"
       ) {
         ans = [];
 
