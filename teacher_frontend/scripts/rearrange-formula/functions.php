@@ -106,7 +106,7 @@ function insert($data, $info)
         $question = $data[$i]['q'];
         //$answer = json_encode($data[$i]['a']);
         
-        $answer = json_encode(array_slice($data[$i]['a'], 1));
+        $answer = json_encode(array_slice($data[$i]['a'], 0, 3));
         
         $query ="INSERT INTO maths_quiz_questions (id_Maths_Excercise_Sets_FK, Question, Answer, Question_Weight, Question_Topic) 
             VALUES('$info[maths_quiz_excercise_sets_last_id]', '$question', '$answer', '100', 'rearrange-formula')";
